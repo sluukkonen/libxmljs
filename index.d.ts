@@ -158,7 +158,7 @@ export class Element extends Node {
 
     namespace(): Namespace|null;
     namespace(newNamespace: Namespace): this;
-    namespace(prefixOrHref: string, hrefInCaseOfPrefix?: string): Namespace;
+    namespace(prefixOrHref: string, hrefInCaseOfPrefix?: string): this;
 
     replace(replacement: string): string;
     replace(replacement: Element): Element;
