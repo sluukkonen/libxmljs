@@ -108,6 +108,7 @@ export class Node {
     prevSibling(): Node|null;
     nextSibling(): Node|null;
 
+    line(): number;
     type(): 'comment'|'element'|'text'|'attribute';
     remove(): this;
     clone(): this;
