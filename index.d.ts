@@ -190,7 +190,7 @@ export class SaxPushParser extends EventEmitter {
     push(source: string): boolean;
 }
 
-export interface SyntaxError {
+export interface SyntaxError extends Error {
     domain: number|null;
     code: number|null;
     message: string|null;
