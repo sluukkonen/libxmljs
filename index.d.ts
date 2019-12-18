@@ -65,8 +65,8 @@ export class Document {
     errors: SyntaxError[];
     validationErrors: ValidationError[];
 
-    child(idx: number): Element|null;
-    childNodes(): Element[];
+    child(idx: number): Node|null;
+    childNodes(): Node[];
     encoding(): string;
     encoding(enc: string): this;
     find<T extends Node = Node>(xpath: string, ns_uri?: string): T[];
