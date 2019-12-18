@@ -69,8 +69,10 @@ export class Document {
     childNodes(): Element[];
     encoding(): string;
     encoding(enc: string): this;
-    find(xpath: string): Element[];
-    get(xpath: string, namespaces?: StringMap): Element|null;
+    find<T extends Node = Node>(xpath: string, ns_uri?: string): T[];
+    find<T extends Node = Node>(xpath: string, namespaces: StringMap): T[];
+    get<T extends Node = Node>(xpath: string, ns_uri?: string): T|null;
+    get<T extends Node = Node>(xpath: string, namespaces: StringMap): T|null;
     node(name: string, content?: string): Element;
     root(): Element|null;
     root(newRoot: Node): Node;
@@ -146,10 +148,10 @@ export class Element extends Node {
     addNextSibling(siblingNode: Node): Node;
     addPrevSibling(siblingNode: Node): Node;
 
-    find(xpath: string, ns_uri?: string): Node[];
-    find(xpath: string, namespaces: StringMap): Node[];
-    get(xpath: string, ns_uri?: string): Element|null;
-    get(xpath: string, namespaces: StringMap): Element|null;
+    find<T extends Node = Node>(xpath: string, ns_uri?: string): T[];
+    find<T extends Node = Node>(xpath: string, namespaces: StringMap): T[];
+    get<T extends Node = Node>(xpath: string, ns_uri?: string): T|null;
+    get<T extends Node = Node>(xpath: string, namespaces: StringMap): T|null;
 
     defineNamespace(prefixOrHref: string, hrefInCaseOfPrefix?: string): Namespace;
 
