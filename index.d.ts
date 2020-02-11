@@ -109,7 +109,7 @@ export class Node {
     nextSibling(): Node|null;
 
     line(): number;
-    type(): 'comment'|'element'|'text'|'attribute';
+    type(): 'comment'|'element'|'text'|'attribute'|'pi';
     remove(): this;
     clone(): this;
     /**
