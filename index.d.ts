@@ -167,13 +167,13 @@ export class Element extends Node {
     path(): string;
 }
 
-export class Attribute {
+export class Attribute extends Node {
     name(): string;
+    node(): Element;
     value(): string;
     value(newValue: string): Attribute;
-    namespace(): Namespace;
+    namespace(): Namespace | null;
 
-    remove(): void;
 }
 
 export class Namespace {
