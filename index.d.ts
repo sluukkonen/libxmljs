@@ -173,7 +173,39 @@ export class Attribute extends Node {
     value(): string;
     value(newValue: string): Attribute;
     namespace(): Namespace | null;
+}
 
+export class Text extends Node {
+    constructor(doc: Document, content: string);
+
+    addNextSibling<T extends Node>(siblingNode: T): T;
+    addPrevSibling<T extends Node>(siblingNode: T): T;
+    nextElement(): Element | null;
+    prevElement(): Element | null;
+
+    replace(replacement: string): string;
+    replace<T extends Node>(replacement: T): T;
+
+    text(): string;
+    text(newContent: string): this;
+  }
+
+
+export class Comment extends Node {
+    constructor(doc: Document, content?: string);
+
+    text(): string;
+    text(newContent: string): this;
+}
+
+export class ProcessingInstruction extends Node {
+    constructor(doc: Document, name: string, content?: string);
+
+    name(): string;
+    name(newName: string): this;
+
+    text(): string;
+    text(newContent: string): this;
 }
 
 export class Namespace {
