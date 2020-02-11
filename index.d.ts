@@ -147,8 +147,8 @@ export class Element extends Node {
 
     prevElement(): Element|null;
     nextElement(): Element|null;
-    addNextSibling(siblingNode: Node): Node;
-    addPrevSibling(siblingNode: Node): Node;
+    addNextSibling<T extends Node>(siblingNode: T): T;
+    addPrevSibling<T extends Node>(siblingNode: T): T;
 
     find<T extends Node = Node>(xpath: string, ns_uri?: string): T[];
     find<T extends Node = Node>(xpath: string, namespaces: StringMap): T[];
