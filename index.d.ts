@@ -162,7 +162,7 @@ export class Element extends Node {
     namespace(prefixOrHref: string, hrefInCaseOfPrefix?: string): this;
 
     replace(replacement: string): string;
-    replace(replacement: Element): Element;
+    replace<T extends Node>(replacement: T): T;
 
     path(): string;
 }
